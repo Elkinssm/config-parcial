@@ -8,11 +8,11 @@
         <version>3.0.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.dh.elkin</groupId>
-    <artifactId>config-server-parcial</artifactId>
+    <groupId>com.dh</groupId>
+    <artifactId>config-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>config-server-parcial</name>
-    <description>config-server-parcial</description>
+    <name>config-server</name>
+    <description>config-server</description>
     <properties>
         <java.version>17</java.version>
         <spring-cloud.version>2022.0.1</spring-cloud.version>

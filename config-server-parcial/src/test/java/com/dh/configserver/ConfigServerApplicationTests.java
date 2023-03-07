@@ -1,10 +1,10 @@
-package com.dh.elkin.configserverparcial;
+package com.dh.configserver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ConfigServerParcialApplicationTests {
+class ConfigServerApplicationTests {
 
     @Test
     void contextLoads() {

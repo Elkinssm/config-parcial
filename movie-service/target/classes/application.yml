@@ -1,11 +1,12 @@
 server:
-  port: 8002
+  port: 8001
 
 spring:
   application:
-    name: catalog-service
+    name: movie-service
   datasource:
     url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
     username: sa
     password: sa
   jpa:
@@ -22,19 +23,10 @@ spring:
       enabled: true
       path: /h2-console
 
-message: hello from catalog-service
+message: hello from movie-service
 
 management:
   endpoints:
     web:
       exposure:
         include: '*'
-eureka:
-  instance:
-    hostname: localhost
-    instance-id: ${spring.application.name}:${random.uuid}
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/

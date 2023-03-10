@@ -15,9 +15,11 @@ La base de datos usada es H2 en memoria, adicional esta la coleccion de postman 
 
 Para utilizar los microservicios y realizar pruebas, sigue los siguientes pasos:
 
-1. Asegúrate de que los microservicios estén funcionando correctamente en la consola o en el ide.
-2. Importa la colección de Postman proporcionada en este repositorio en Postman.
-3. Utiliza la colección de Postman para realizar pruebas de los microservicios mediante los endpoints proporcionados.
+1. Asegúrate de que el Config Server, Eureka Server y Gateway estén funcionando correctamente en la consola o en el IDE,
+   en ese orden.
+2. Asegúrate de que los microservicios de Movie y Catalog estén funcionando correctamente en la consola o en el IDE.
+3. Importa la colección de Postman proporcionada en este repositorio en Postman.
+4. Utiliza la colección de Postman para realizar pruebas de los microservicios mediante los endpoints proporcionados.
 
 [Colección de Postman](./Parcial-microservicios-elkin-silva.postman_collection.json)
 

@@ -1,0 +1,203 @@
+{
+	"info": {
+		"_postman_id": "5bc50988-0d5f-4626-a418-b965e880b40e",
+		"name": "Parcial-microservicios-elkin-silva",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8623951"
+	},
+	"item": [
+		{
+			"name": "Consultar peliculas por genero",
+			"item": [
+				{
+					"name": "Consultar peliculas de terror",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/movies/terror",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"terror"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar peliculas de accion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/movies/accion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"accion"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Consultar configuraciones",
+			"item": [
+				{
+					"name": "Server config catalog microservice",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/catalog-service-parcial/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"catalog-service-parcial",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Server config eureka client",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/eureka-server-parcial/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"eureka-server-parcial",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Server config api gateway",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/api-gateway/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api-gateway",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Server config movie microservice",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/movie-service-parcial/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"movie-service-parcial",
+								"default"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Crear peliculas",
+			"item": [
+				{
+					"name": "Guardar pelicula accion 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Black Adam\",\r\n    \"genre\": \"accion\",\r\n    \"urlStream\": \"testBd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/movies/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Guardar pelicula accion 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Moonfall\",\r\n    \"genre\": \"accion\",\r\n    \"urlStream\": \"testBd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/movies/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"save"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

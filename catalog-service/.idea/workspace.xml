@@ -6,15 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f4fcf77f-3913-40d1-9551-fdcdfaf141ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dh/catalogservice/AppConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dh/catalogservice/CatalogServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dh/catalogservice/CatalogServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dh/catalogservice/api/controller/CatalogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dh/catalogservice/api/controller/CatalogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dh/catalogservice/api/service/CatalogService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dh/catalogservice/api/service/ICatalogService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie-service/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../movie-service/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../movie-service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../movie-service/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../movie-service/movie-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../movie-service/movie-service.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +79,7 @@
       <workItem from="1678232747101" duration="1738000" />
       <workItem from="1678234551189" duration="120000" />
       <workItem from="1678235798314" duration="4278000" />
-      <workItem from="1678402049987" duration="1598000" />
+      <workItem from="1678402049987" duration="2957000" />
     </task>
     <servers />
   </component>

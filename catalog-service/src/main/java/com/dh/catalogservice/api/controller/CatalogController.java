@@ -23,18 +23,4 @@ public class CatalogController {
     ResponseEntity<List<Movie>> getCatalog(@PathVariable String genre) {
         return iMovieServiceClient.getMoviesByCatalog(genre);
     }
-
-//    private final CatalogService service;
-//
-//    public CatalogController(CatalogService service) {
-//        this.service = service;
-//    }
-//
-//
-//    @GetMapping("/{genre}")
-//    ResponseEntity<List<Movie>> getGenre(@PathVariable String genre) {
-//
-//        return ResponseEntity.ok().body(service.getMovieByGenre(genre));
-//    }
-
 }

@@ -6,15 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="de58f402-fa74-443d-8802-c94f6a6315ea" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../catalog-service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../catalog-service/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../catalog-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../catalog-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../catalog-service/src/main/java/com/dh/catalogservice/AppConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../catalog-service/src/main/java/com/dh/catalogservice/CatalogServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../catalog-service/src/main/java/com/dh/catalogservice/CatalogServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../catalog-service/src/main/java/com/dh/catalogservice/api/controller/CatalogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../catalog-service/src/main/java/com/dh/catalogservice/api/controller/CatalogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../catalog-service/src/main/java/com/dh/catalogservice/api/service/CatalogService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../catalog-service/src/main/java/com/dh/catalogservice/api/service/ICatalogService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/movie-service.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +70,7 @@
       <updated>1678233043900</updated>
       <workItem from="1678233045053" duration="955000" />
       <workItem from="1678402086110" duration="519000" />
-      <workItem from="1678403024078" duration="965000" />
+      <workItem from="1678403024078" duration="2621000" />
     </task>
     <servers />
   </component>

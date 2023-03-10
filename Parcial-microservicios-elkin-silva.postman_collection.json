@@ -15,14 +15,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/movies/terror",
+							"raw": "http://localhost:8080/catalog/terror",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"movies",
+								"catalog",
 								"terror"
 							]
 						}
@@ -35,15 +35,55 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/movies/accion",
+							"raw": "http://localhost:8080/catalog/accion",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"movies",
+								"catalog",
 								"accion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar peliculas de acao",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/catalog/acao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"catalog",
+								"acao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar peliculas de romance",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/catalog/romance",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"catalog",
+								"romance"
 							]
 						}
 					},
@@ -154,14 +194,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/movies/save",
+							"raw": "http://localhost:8080/catalog/save",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"movies",
+								"catalog",
 								"save"
 							]
 						}
@@ -183,14 +223,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/movies/save",
+							"raw": "http://localhost:8080/catalog/save",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"movies",
+								"catalog",
 								"save"
 							]
 						}

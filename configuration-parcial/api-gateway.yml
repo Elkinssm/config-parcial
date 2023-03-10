@@ -10,10 +10,10 @@ spring:
         locator:
           enabled: true
       routes:
-        - id: movie-service-parcial
-          uri: lb://movie-service-parcial
+        - id: catalog-service-parcial
+          uri: lb://catalog-service-parcial
           predicates:
-            - Path=/movies/**
+            - Path=/catalog/**
 
 info:
   app:

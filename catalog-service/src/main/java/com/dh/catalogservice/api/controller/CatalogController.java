@@ -1,7 +1,5 @@
 package com.dh.catalogservice.api.controller;
 
-//import com.dh.catalogservice.api.service.CatalogService;
-
 import com.dh.catalogservice.api.client.IMovieServiceClient;
 import com.dh.catalogservice.domain.model.Movie;
 import org.springframework.beans.factory.annotation.Autowired;

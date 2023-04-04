@@ -5,10 +5,10 @@ spring:
   application:
     name: movie-service-parcial
   datasource:
-    url: jdbc:h2:mem:testdb
-    driverClassName: org.h2.Driver
-    username: sa
-    password: sa
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/movie-dev
+    username: admin2023
+    password: admin2023
   jpa:
     open-in-view: false
     show-sql: true

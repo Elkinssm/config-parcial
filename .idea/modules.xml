@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/api-gateway/api-gateway.iml" filepath="$PROJECT_DIR$/api-gateway/api-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/serie-service/api-serie.iml" filepath="$PROJECT_DIR$/serie-service/api-serie.iml" />
+      <module fileurl="file://$PROJECT_DIR$/catalog-service/catalog-service.iml" filepath="$PROJECT_DIR$/catalog-service/catalog-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config-server-parcial/config-server.iml" filepath="$PROJECT_DIR$/config-server-parcial/config-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/especializacion-backend-i-parcial.iml" filepath="$PROJECT_DIR$/.idea/especializacion-backend-i-parcial.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-server-parcial/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server-parcial/eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/movie-service/movie-service.iml" filepath="$PROJECT_DIR$/movie-service/movie-service.iml" />
     </modules>
   </component>
 </project>

@@ -1,9 +1,11 @@
 package com.dh.movieservice.domain.model;
 
-import jakarta.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
 

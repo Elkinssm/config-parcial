@@ -31,14 +31,14 @@ public class SerieApplication {
 			}
 
 			//Serie A terror
-			List<Serie.Season.Chapter> serieASeasonAChapters = List.of(
-					new Serie.Season.Chapter("Chapter A", 1, baseUrl + "/terror/1/season/1/chapter/1"),
-					new Serie.Season.Chapter("Chapter B", 2, baseUrl + "/terror/1/season/1/chapter/2")
+			List<Serie.Chapter> serieASeasonAChapters = List.of(
+					new Serie.Chapter("Chapter A", 1, baseUrl + "/terror/1/season/1/chapter/1"),
+					new Serie.Chapter("Chapter B", 2, baseUrl + "/terror/1/season/1/chapter/2")
 			);
 
-			List<Serie.Season.Chapter> serieASeasonBChapters = List.of(
-					new Serie.Season.Chapter("Chapter A", 1, baseUrl + "/terror/1/season/2/chapter/1"),
-					new Serie.Season.Chapter("Chapter B", 2, baseUrl + "/terror/1/season/2/chapter/2")
+			List<Serie.Chapter> serieASeasonBChapters = List.of(
+					new Serie.Chapter("Chapter A", 1, baseUrl + "/terror/1/season/2/chapter/1"),
+					new Serie.Chapter("Chapter B", 2, baseUrl + "/terror/1/season/2/chapter/2")
 			);
 
 			List<Serie.Season> serieASeasons = List.of(
@@ -47,14 +47,14 @@ public class SerieApplication {
 			);
 
 			//Serie B comedia
-			List<Serie.Season.Chapter> serieBSeasonAChapters = List.of(
-					new Serie.Season.Chapter("Chapter A", 1, baseUrl + "/comedia/1/season/1/chapter/1"),
-					new Serie.Season.Chapter("Chapter B", 2, baseUrl + "/comedia/1/season/1/chapter/2")
+			List<Serie.Chapter> serieBSeasonAChapters = List.of(
+					new Serie.Chapter("Chapter A", 1, baseUrl + "/comedia/1/season/1/chapter/1"),
+					new Serie.Chapter("Chapter B", 2, baseUrl + "/comedia/1/season/1/chapter/2")
 			);
 
-			List<Serie.Season.Chapter> serieBSeasonBChapters = List.of(
-					new Serie.Season.Chapter("Chapter A", 1, baseUrl + "/comedia/1/season/2/chapter/1"),
-					new Serie.Season.Chapter("Chapter B", 2, baseUrl + "/comedia/1/season/2/chapter/2")
+			List<Serie.Chapter> serieBSeasonBChapters = List.of(
+					new Serie.Chapter("Chapter A", 1, baseUrl + "/comedia/1/season/2/chapter/1"),
+					new Serie.Chapter("Chapter B", 2, baseUrl + "/comedia/1/season/2/chapter/2")
 			);
 
 			List<Serie.Season> serieBSeasons = List.of(

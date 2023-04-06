@@ -1,21 +1,19 @@
-package com.dh.serie.controller;
+package com.dh.serie.api.controller;
 
 import com.dh.serie.model.Serie;
 import com.dh.serie.service.SerieService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/series")
 public class SerieController {
 
     private final SerieService serieService;
-
-    public SerieController(SerieService serieService) {
-        this.serieService = serieService;
-    }
 
     @GetMapping
     public List<Serie> getAll() {
@@ -33,5 +31,6 @@ public class SerieController {
         serieService.create(serie);
         return serie.getId();
     }
+
 
 }

@@ -1,35 +1,31 @@
-package com.dh.serie.service;
+package com.dh.catalogservice.api.service;
 
-import com.dh.serie.api.queue.SerieSender;
-import com.dh.serie.model.Serie;
-import com.dh.serie.repository.SerieRepository;
-import lombok.RequiredArgsConstructor;
+import com.dh.catalogservice.api.repository.SerieRepository;
+import com.dh.catalogservice.domain.model.Serie;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
-@RequiredArgsConstructor
 @Service
-public class SerieService {
+public class CatalogService {
 
     private final SerieRepository repository;
 
-    private final SerieSender sender;
+
+    public CatalogService(SerieRepository repository) {
+        this.repository = repository;
+    }
 
     public List<Serie> getAll() {
         return repository.findAll();
     }
 
-
     public List<Serie> getSeriesBygGenre(String genre) {
         return repository.findAllByGenre(genre);
     }
 
-    public void create(Serie serie) {
-        sender.send(serie);
+    public String create(Serie serie) {
         repository.save(serie);
+        return serie.getId();
     }
-
-
 }

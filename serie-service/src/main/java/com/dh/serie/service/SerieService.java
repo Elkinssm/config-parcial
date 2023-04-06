@@ -26,8 +26,8 @@ public class SerieService {
         return repository.findAllByGenre(genre);
     }
 
-    public void create(Serie serie) {
-        sender.send(serie);
+    public void createSerie(Serie serie) {
+        sender.sendSerie(serie);
         repository.save(serie);
     }
 

@@ -1,7 +1,7 @@
 package com.dh.catalogservice.api.queue;
 
 import com.dh.catalogservice.api.service.CatalogService;
-import com.dh.catalogservice.domain.model.Serie;
+import com.dh.catalogservice.domain.model.Movie;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -10,28 +10,28 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SerieListener {
+public class MovieListener {
 
 
     private final CatalogService service;
     private final RabbitTemplate rabbitTemplate;
-    private final Logger logger = LoggerFactory.getLogger(SerieListener.class);
+    private final Logger logger = LoggerFactory.getLogger(MovieListener.class);
 
-    public SerieListener(CatalogService service, RabbitTemplate rabbitTemplate) {
+    public MovieListener(CatalogService service, RabbitTemplate rabbitTemplate) {
         this.service = service;
         this.rabbitTemplate = rabbitTemplate;
     }
 
-    @RabbitListener(queues = {"${queue.serie.name}"})
-    public void receive(@Payload Serie serie) {
+    @RabbitListener(queues = {"${queue.movie.name}"})
+    public void receive(@Payload Movie movie) {
         try {
             Thread.sleep(1000);
-            service.createSerie(serie);
+            service.createMovie(movie);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (Exception e) {
             logger.error("Error al crear la serie: {}", e.getMessage());
-            rabbitTemplate.convertAndSend("error.exchange", "error.routingKey", serie);
+            rabbitTemplate.convertAndSend("error.exchange", "error.routingKey", movie);
         }
     }
 }

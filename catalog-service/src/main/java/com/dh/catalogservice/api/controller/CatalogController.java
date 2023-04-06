@@ -2,6 +2,7 @@ package com.dh.catalogservice.api.controller;
 
 import com.dh.catalogservice.api.client.IMovieServiceClient;
 import com.dh.catalogservice.api.client.ISerieServiceClient;
+import com.dh.catalogservice.api.service.CatalogService;
 import com.dh.catalogservice.domain.model.CatalogResponse;
 import com.dh.catalogservice.domain.model.Movie;
 import com.dh.catalogservice.domain.model.Serie;
@@ -14,6 +15,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/catalog")
 public class CatalogController {
+
+    @Autowired
+    private CatalogService service;
     @Autowired
     private IMovieServiceClient iMovieServiceClient;
 
@@ -35,9 +39,21 @@ public class CatalogController {
     }
 
 
-    @PostMapping("/save")
-    ResponseEntity<Movie> saveMovie(@RequestBody Movie movie) {
-        return ResponseEntity.ok().body(iMovieServiceClient.saveMovieByCatalog(movie));
+//    @PostMapping("/save")
+//    ResponseEntity<Movie> saveMovie(@RequestBody Movie movie) {
+//        return ResponseEntity.ok().body(iMovieServiceClient.saveMovieByCatalog(movie));
+//    }
+
+
+    @PostMapping("/save-movie")
+    ResponseEntity<String> saveMovie(@RequestBody Movie movie) {
+        return ResponseEntity.ok().body(service.createMovie(movie));
     }
+
+    @PostMapping("/save-serie")
+    ResponseEntity<String> saveSerie(@RequestBody Serie serie) {
+        return ResponseEntity.ok().body(service.createSerie(serie));
+    }
+
 
 }

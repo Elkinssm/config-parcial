@@ -1,7 +1,7 @@
-package com.dh.serie.api.controller;
+package com.dh.movieservice.api.controller;
 
-import com.dh.serie.model.Serie;
-import com.dh.serie.service.SerieService;
+import com.dh.movieservice.api.service.MovieService;
+import com.dh.movieservice.domain.model.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/series")
-public class RegisterSerieController {
+@RequestMapping("/movies")
+public class RegisterMovieController {
 
     @Autowired
-    private SerieService service;
+    private MovieService service;
 
     @PostMapping("/save")
-    public ResponseEntity<?> saveSerie(@RequestBody Serie serie) {
-        service.createSerie(serie);
+    public ResponseEntity<?> saveSerie(@RequestBody Movie movie) {
+        service.save(movie);
         return ResponseEntity.noContent().build();
     }
 }

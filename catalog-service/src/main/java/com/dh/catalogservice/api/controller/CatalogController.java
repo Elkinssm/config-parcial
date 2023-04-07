@@ -2,6 +2,8 @@ package com.dh.catalogservice.api.controller;
 
 import com.dh.catalogservice.api.client.IMovieServiceClient;
 import com.dh.catalogservice.api.client.ISerieServiceClient;
+import com.dh.catalogservice.api.repository.MovieRepository;
+import com.dh.catalogservice.api.repository.SerieRepository;
 import com.dh.catalogservice.domain.model.CatalogResponse;
 import com.dh.catalogservice.domain.model.Movie;
 import com.dh.catalogservice.domain.model.Serie;
@@ -23,12 +25,25 @@ public class CatalogController {
     @Autowired
     private ISerieServiceClient iSerieServiceClient;
 
+    @Autowired
+    private MovieRepository movieRepository;
+
+    @Autowired
+    private SerieRepository serieRepository;
+
 
     @GetMapping("/{genre}")
-    public CatalogResponse getCatalogByGenre(@PathVariable String genre) {
+    public CatalogResponse getCatalogByGenreOnline(@PathVariable String genre) {
         List<Movie> movies = iMovieServiceClient.getMoviesByCatalog(genre);
         List<Serie> series = iSerieServiceClient.getSerieByGenre(genre);
         return new CatalogResponse(genre, movies, series);
+    }
+
+    @GetMapping("/all")
+    public CatalogResponse getCatalogByGenreOffline() {
+        List<Movie> movies = movieRepository.findAll();
+        List<Serie> series = serieRepository.findAll();
+        return new CatalogResponse(" ", movies, series);
     }
 
 

@@ -39,21 +39,11 @@ public class CatalogController {
     }
 
 
-//    @PostMapping("/save")
-//    ResponseEntity<Movie> saveMovie(@RequestBody Movie movie) {
-//        return ResponseEntity.ok().body(iMovieServiceClient.saveMovieByCatalog(movie));
-//    }
-
-
-    @PostMapping("/save-movie")
+    @PostMapping("/save")
     ResponseEntity<String> saveMovie(@RequestBody Movie movie) {
         return ResponseEntity.ok().body(service.createMovie(movie));
     }
 
-    @PostMapping("/save-serie")
-    ResponseEntity<String> saveSerie(@RequestBody Serie serie) {
-        return ResponseEntity.ok().body(service.createSerie(serie));
-    }
 
 
 }

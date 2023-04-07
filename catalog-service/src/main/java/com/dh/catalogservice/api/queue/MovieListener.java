@@ -25,12 +25,10 @@ public class MovieListener {
     @RabbitListener(queues = {"${queue.movie.name}"})
     public void receive(@Payload Movie movie) {
         try {
-            Thread.sleep(1000);
+//            Thread.sleep(1000);
             service.createMovie(movie);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         } catch (Exception e) {
-            logger.error("Error al crear la serie: {}", e.getMessage());
+            logger.error("Error al crear la pelicula: {}", e.getMessage());
             rabbitTemplate.convertAndSend("error.exchange", "error.routingKey", movie);
         }
     }

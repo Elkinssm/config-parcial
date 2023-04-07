@@ -25,10 +25,8 @@ public class SerieListener {
     @RabbitListener(queues = {"${queue.serie.name}"})
     public void receive(@Payload Serie serie) {
         try {
-            Thread.sleep(1000);
+//            Thread.sleep(1000);
             service.createSerie(serie);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         } catch (Exception e) {
             logger.error("Error al crear la serie: {}", e.getMessage());
             rabbitTemplate.convertAndSend("error.exchange", "error.routingKey", serie);

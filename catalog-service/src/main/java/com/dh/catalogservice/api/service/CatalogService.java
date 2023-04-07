@@ -32,13 +32,15 @@ public class CatalogService {
         return movieRepository.findAllByGenre(genre);
     }
 
-    public String createSerie(Serie serie) {
+    public Serie createSerie(Serie serie) {
         serieRepository.save(serie);
-        return serie.getId();
+        return serie;
     }
 
-    public String createMovie(Movie movie) {
+    public Movie createMovie(Movie movie) {
         movieRepository.save(movie);
-        return movie.getId();
+        return movie;
     }
+
+
 }

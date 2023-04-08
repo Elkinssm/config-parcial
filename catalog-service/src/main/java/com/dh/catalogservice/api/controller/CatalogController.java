@@ -8,6 +8,7 @@ import com.dh.catalogservice.domain.model.CatalogResponse;
 import com.dh.catalogservice.domain.model.Movie;
 import com.dh.catalogservice.domain.model.Serie;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.retry.annotation.Retry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -66,6 +67,7 @@ public class CatalogController {
      * @throws RuntimeException si no se puede obtener la lista de películas por ningún medio
      */
     @CircuitBreaker(name = "movies", fallbackMethod = "fallback")
+    @Retry(name = "movies")
     @GetMapping("/fall/{genre}")
     public List<Movie> getMovieByGenre(@PathVariable String genre) {
         List<Movie> movieList = iMovieServiceClient.getMoviesByCatalog(genre);
@@ -80,53 +82,18 @@ public class CatalogController {
      * desde el servicio externo o desde la base de datos local.
      *
      * @param genre el género de la película
-     * @param e la excepción que causó el fallback
+     * @param e     la excepción que causó el fallback
      * @return la lista de películas que se obtiene desde la base de datos local
      * @throws RuntimeException si no se puede obtener ninguna película desde la base de datos local
      */
     private List<Movie> fallback(String genre, RuntimeException e) {
-        System.out.println("Usando fallback de movies " + genre);
+        System.out.println("Usando fallback de peliculas para buscar el genero: " + genre);
         List<Movie> movieList = movieRepository.findAllByGenre(genre);
         if (movieList.isEmpty()) {
             throw new RuntimeException("No se pudo encontrar ninguna película en la base de datos local");
         }
         return movieList;
     }
-
-//    @CircuitBreaker(name = "movies", fallbackMethod = "fallback")
-//    @GetMapping("/fall/{genre}")
-//    public List<Movie> getMovieByGenre(@PathVariable String genre) {
-//        throw new RuntimeException("Error al obtener películas del catálogo");
-//    }
-//
-//    private List<Movie> fallback(String genre, RuntimeException e) {
-//        System.out.println("Usando fallback de movies " + genre);
-//        return movieRepository.findAllByGenre(genre);
-//    }
-
-//    @CircuitBreaker(name = "movies", fallbackMethod = "fallback")
-//    @GetMapping("/fall/{genre}")
-//    public List<Movie> getMovieByGenre(@PathVariable String genre) {
-//        List<Movie> movieList = iMovieServiceClient.getMoviesByCatalog(genre);
-//        return movieList;
-//
-//    }
-//
-//    private List<Movie> fallback(String genre, RuntimeException e) {
-//        System.out.println("Usando fallback de movies " + genre);
-//        return movieRepository.findAllByGenre(genre);
-//    }
-
-
-//    @CircuitBreaker(name="movies",fallbackMethod = "fallback")
-//    @GetMapping("/{genre}")
-//    public ResponseEntity<List<Movie>> getMovieByGenre(@PathVariable String genre) {
-//        return ResponseEntity.ok().body(iMovieServiceClient.getMoviesByCatalog(genre));
-//    }
-//
-//    private ResponseEntity<List<Movie>> fallback(@PathVariable String genre, RuntimeException e) {
-//        return new ResponseEntity("Base de datos no funciona", HttpStatus.OK);
-//    }
 
 
 }

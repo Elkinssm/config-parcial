@@ -12,6 +12,15 @@ resilience4j.circuitbreaker:
       permitted-number-of-calls-in-half-open-state: 2
       sliding-window-type: COUNT_BASED
       sliding-window-size: 2
+resilience4j.retry:
+  retryAspectOrder: 2
+  instances:
+    movies:
+      maxAttempts: 2
+      waitDuration: 10
+      retryExceptions:
+        - feign.FeignException$InternalServerError
+
 management:
   health:
     circuitbreakers:
@@ -19,3 +28,4 @@ management:
   endpoint:
     health:
       show-details: always
+

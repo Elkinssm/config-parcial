@@ -12,21 +12,16 @@ spring:
         - id: catalog-service-parcial
           uri: lb://catalog-service-parcial
           predicates:
-            - Path=/api/catalog/**
-          filters:
-            - StripPrefix=2
+            - Path=/catalog/**
         - id: movie-service-parcial
           uri: lb://movie-service-parcial
           predicates:
-            - Path=/api/movies/**
-          filters:
-            - StripPrefix=2
+            - Path=/movies/**
         - id: serie-service-parcial
           uri: lb://serie-service-parcial
           predicates:
-            - Path=/api/series/**
-          filters:
-            - StripPrefix=2
+            - Path=/series/**
+
   zipkin:
     base-url: 'http://localhost:9411/'
     enabled: true

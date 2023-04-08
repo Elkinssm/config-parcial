@@ -47,23 +47,32 @@ public class CatalogController {
         return new CatalogResponse(genre, movies, series);
     }
 
-    @GetMapping("/all")
+    @GetMapping("/local/all")
     public CatalogResponse getCatalogByGenreOffline() {
         List<Movie> movies = movieRepository.findAll();
         List<Serie> series = serieRepository.findAll();
-        return new CatalogResponse(" ", movies, series);
+        return new CatalogResponse("local", movies, series);
     }
 
-    @GetMapping("/all-movies")
+    @GetMapping("/local/all-movies")
     ResponseEntity<List<Movie>> getAllMovies() {
         return ResponseEntity.ok().body(movieRepository.findAll());
     }
 
-    @GetMapping("/all-movies/{genre}")
+    @GetMapping("/local/all-movies/{genre}")
     public List<Movie> getMovieByGenreOff(@PathVariable String genre) {
         return movieRepository.findAllByGenre(genre);
     }
 
+    @GetMapping("/local/all-series")
+    ResponseEntity<List<Serie>> getAllSeries() {
+        return ResponseEntity.ok().body(serieRepository.findAll());
+    }
+
+    @GetMapping("/all-series/{genre}")
+    public List<Serie> getSerieByGenreOff(@PathVariable String genre) {
+        return serieRepository.findAllByGenre(genre);
+    }
 
     /**
      * Este metodo se usa para obtener una lista de peliculas por género utilizando el

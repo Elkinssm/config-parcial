@@ -1,6 +1,5 @@
 server:
-  port: ${PORT:${SERVER_PORT:8080}}
-
+  port: '${PORT:${SERVER_PORT:8080}}'
 spring:
   application:
     name: api-gateway
@@ -11,22 +10,31 @@ spring:
           enabled: true
       routes:
         - id: catalog-service-parcial
-          uri: lb://catalog-service-parcial
+          uri: 'lb://catalog-service-parcial'
           predicates:
-            - Path=/catalog/**
-
+            - Path=/api/catalog/**
+        - id: movie-service-parcial
+          uri: 'lb://movie-service-parcial'
+          predicates:
+            - Path=/api/movies/**
+        - id: serie-service-parcial
+          uri: 'lb://serie-service-parcial'
+          predicates:
+            - Path=/api/series/**
+  zipkin:
+    base-url: 'http://localhost:9411/'
+    enabled: true
 info:
   app:
-    name: ${spring.application.name}
-
+    name: '${spring.application.name}'
 eureka:
   instance:
-    instance-id: ${spring.application.name}:${random.uuid}
+    instance-id: '${spring.application.name}:${random.uuid}'
   client:
     registerWithEureka: false
     fetchRegistry: true
     serviceURL:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: 'http://localhost:8761/eureka'
   management:
     endpoint:
       gateway:
@@ -35,3 +43,9 @@ eureka:
       web:
         exposure:
           include: gateway
+  health:
+    circuitbreakers:
+      enabled: 'true'
+  endpoint:
+    health:
+      show-details: always

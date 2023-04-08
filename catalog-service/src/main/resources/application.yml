@@ -32,11 +32,6 @@ resilience4j:
         wait-duration: 10s
         retry-exceptions:
           - feign.FeignException$InternalServerError
-
-
-
-
-
 management:
   health:
     circuitbreakers:

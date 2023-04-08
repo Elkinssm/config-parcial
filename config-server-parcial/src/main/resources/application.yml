@@ -8,7 +8,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/Elkinssm/configuration-parcial.git
+          uri: https://github.com/Elkinssm/parcial-backend-elkin-silva.git
           default-label: main
           force-pull: true
-#          search-paths: configuration-parcial
+          search-paths: configuration-parcial

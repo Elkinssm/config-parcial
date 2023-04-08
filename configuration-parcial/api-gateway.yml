@@ -10,17 +10,17 @@ spring:
           enabled: true
       routes:
         - id: catalog-service-parcial
-          uri: 'lb://catalog-service-parcial'
+          uri: lb://catalog-service-parcial
           predicates:
-            - Path=/catalog/**
+            - Path=/api/catalog/**
         - id: movie-service-parcial
-          uri: 'lb://movie-service-parcial'
+          uri: lb://movie-service-parcial
           predicates:
-            - Path=/movies/**
+            - Path=/api/movies/**
         - id: serie-service-parcial
-          uri: 'lb://serie-service-parcial'
+          uri: lb://serie-service-parcial
           predicates:
-            - Path=/series/**
+            - Path=/api/series/**
   zipkin:
     base-url: 'http://localhost:9411/'
     enabled: true

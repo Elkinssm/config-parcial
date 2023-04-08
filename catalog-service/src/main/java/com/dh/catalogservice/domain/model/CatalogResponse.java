@@ -1,7 +1,12 @@
 package com.dh.catalogservice.domain.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
+@Getter
+@Setter
 public class CatalogResponse {
     private String genre;
     private List<Movie> movies;
@@ -13,27 +18,5 @@ public class CatalogResponse {
         this.series = series;
     }
 
-    public String getGenre() {
-        return genre;
-    }
 
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-
-    public List<Movie> getMovies() {
-        return movies;
-    }
-
-    public void setMovies(List<Movie> movies) {
-        this.movies = movies;
-    }
-
-    public List<Serie> getSeries() {
-        return series;
-    }
-
-    public void setSeries(List<Serie> series) {
-        this.series = series;
-    }
 }

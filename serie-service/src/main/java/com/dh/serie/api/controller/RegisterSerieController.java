@@ -19,6 +19,6 @@ public class RegisterSerieController {
     @PostMapping("/save")
     public ResponseEntity<?> saveSerie(@RequestBody Serie serie) {
         service.createSerie(serie);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok("Serie creada exitosamente");
     }
 }

@@ -48,10 +48,17 @@ public class CatalogController {
     }
 
     @GetMapping("/local/all")
-    public CatalogResponse getCatalogByGenreOffline() {
+    public CatalogResponse getCatalogOffline() {
         List<Movie> movies = movieRepository.findAll();
         List<Serie> series = serieRepository.findAll();
         return new CatalogResponse("local", movies, series);
+    }
+
+    @GetMapping("/local/all/{genre}")
+    public CatalogResponse getCatalogByGenreOffline(@PathVariable String genre) {
+        List<Movie> movies = movieRepository.findAllByGenre(genre);
+        List<Serie> series = serieRepository.findAllByGenre(genre);
+        return new CatalogResponse(genre, movies, series);
     }
 
     @GetMapping("/local/all-movies")
@@ -69,7 +76,7 @@ public class CatalogController {
         return ResponseEntity.ok().body(serieRepository.findAll());
     }
 
-    @GetMapping("/all-series/{genre}")
+    @GetMapping("/local/all-series/{genre}")
     public List<Serie> getSerieByGenreOff(@PathVariable String genre) {
         return serieRepository.findAllByGenre(genre);
     }
@@ -84,7 +91,7 @@ public class CatalogController {
      */
     @CircuitBreaker(name = "movies", fallbackMethod = "fallbackMovies")
     @Retry(name = "movies")
-    @GetMapping("/fall/{genre}")
+    @GetMapping("/fall-movies/{genre}")
     public List<Movie> getMovieByGenre(@PathVariable String genre) {
         logger.info("Buscando peliculas por genero :" + genre + ". En la base de datos online");
         List<Movie> movieList = iMovieServiceClient.getMoviesByCatalog(genre);
@@ -122,7 +129,7 @@ public class CatalogController {
      */
     @CircuitBreaker(name = "series", fallbackMethod = "fallbackSeries")
     @Retry(name = "series")
-    @GetMapping("/fall2/{genre}")
+    @GetMapping("/fall-series/{genre}")
     public List<Serie> getSerieByGenre(@PathVariable String genre) {
         logger.info("Buscando series por genero :" + genre + ". En la base de datos online");
         List<Serie> serieList = iSerieServiceClient.getSerieByGenre(genre);

@@ -16,9 +16,9 @@ public class RegisterMovieController {
     @Autowired
     private MovieService service;
 
-    @PostMapping("/save")
+    @PostMapping("/save/local")
     public ResponseEntity<?> saveSerie(@RequestBody Movie movie) {
         service.save(movie);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok("Pelicula creada exitosamente");
     }
 }

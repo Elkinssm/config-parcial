@@ -26,6 +26,11 @@ public class SerieService {
         return repository.findAllByGenre(genre);
     }
 
+    public Serie save(Serie serie) {
+        return repository.save(serie);
+    }
+
+
     public void createSerie(Serie serie) {
         sender.sendSerie(serie);
         repository.save(serie);

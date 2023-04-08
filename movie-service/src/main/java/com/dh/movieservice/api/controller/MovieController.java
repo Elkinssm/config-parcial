@@ -23,16 +23,12 @@ public class MovieController {
         return ResponseEntity.ok().body(service.findByGenre(genre));
     }
 
-    //    @PostMapping("/save")
-//    @PostMapping
-//    ResponseEntity<Movie> saveMovie(@RequestBody Movie movie) {
-//        return ResponseEntity.ok().body(service.save(movie));
-//    }
 
-    @PostMapping()
+
+    @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Movie create(@RequestBody Movie movie) {
+    public ResponseEntity<String> create(@RequestBody Movie movie) {
         service.createMovie(movie);
-        return movie;
+        return ResponseEntity.ok("Pelicula creada exitosamente");
     }
 }

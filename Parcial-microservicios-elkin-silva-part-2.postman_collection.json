@@ -1,0 +1,516 @@
+{
+	"info": {
+		"_postman_id": "ab7362e8-86a2-410f-bdd5-f38c10714242",
+		"name": "Parcial-microservicios-elkin-silva-part-2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8623951"
+	},
+	"item": [
+		{
+			"name": "Consultar peliculas local(offline)",
+			"item": [
+				{
+					"name": "Consultar todas las peliculas en la bd local",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/catalog/local/all-movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"catalog",
+								"local",
+								"all-movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar todas las peliculas en la bd local por genero accion ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/catalog/local/all-movies/accion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"catalog",
+								"local",
+								"all-movies",
+								"accion"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Consultar configuraciones",
+			"item": [
+				{
+					"name": "Server config catalog microservice",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/catalog-service-parcial/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"catalog-service-parcial",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Server config eureka client",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/eureka-server-parcial/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"eureka-server-parcial",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Server config api gateway",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/api-gateway/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api-gateway",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Server config movie microservice",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/movie-service-parcial/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"movie-service-parcial",
+								"default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Server config serie microservice",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/serie-service-parcial/default",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"serie-service-parcial",
+								"default"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Crear peliculas bd local y online",
+			"item": [
+				{
+					"name": "Guardar pelicula Accion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Black Adam\",\r\n    \"genre\": \"Accion\",\r\n    \"urlStream\": \"testBd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/movies/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Guardar pelicula Sci-Fi",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Blade Runner 2049\",\r\n    \"genre\": \"Sci-Fi\",\r\n    \"urlStream\": \"testBd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/movies/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"save"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Crear Series bd local y online",
+			"item": [
+				{
+					"name": "Crear serie de Drama",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Breaking Bad\",\r\n    \"genre\": \"Drama\",\r\n    \"seasons\": [\r\n        {\r\n            \"seasonNumber\": 1,\r\n            \"chapters\": [\r\n                {\r\n                    \"name\": \"Pilot\",\r\n                    \"number\": 1,\r\n                    \"urlStream\": \"https://www.youtube.com/watch?v=HhesaQXLuRY\"\r\n                },\r\n                {\r\n                    \"name\": \"Cat's in the Bag...\",\r\n                    \"number\": 2,\r\n                    \"urlStream\": \"https://www.youtube.com/watch?v=EzjHVNOrtkg\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"seasonNumber\": 2,\r\n            \"chapters\": [\r\n                {\r\n                    \"name\": \"Seven Thirty-Seven\",\r\n                    \"number\": 1,\r\n                    \"urlStream\": \"https://www.youtube.com/watch?v=ZG_K5WGyN9o\"\r\n                },\r\n                {\r\n                    \"name\": \"Grilled\",\r\n                    \"number\": 2,\r\n                    \"urlStream\": \"https://www.youtube.com/watch?v=vCgB0hA1NxA\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/series/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"series",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear serie de Sci-Fi",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Stranger Things\",\r\n    \"genre\": \"Sci-Fi\",\r\n    \"seasons\": [\r\n        {\r\n            \"seasonNumber\": 1,\r\n            \"chapters\": [\r\n                {\r\n                    \"name\": \"Chapter One: The Vanishing of Will Byers\",\r\n                    \"number\": 1,\r\n                    \"urlStream\": \"https://www.netflix.com/watch/80057281\"\r\n                },\r\n                {\r\n                    \"name\": \"Chapter Two: The Weirdo on Maple Street\",\r\n                    \"number\": 2,\r\n                    \"urlStream\": \"https://www.netflix.com/watch/80057282\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"seasonNumber\": 2,\r\n            \"chapters\": [\r\n                {\r\n                    \"name\": \"Chapter One: MADMAX\",\r\n                    \"number\": 1,\r\n                    \"urlStream\": \"https://www.netflix.com/watch/80133309\"\r\n                },\r\n                {\r\n                    \"name\": \"Chapter Two: Trick or Treat, Freak\",\r\n                    \"number\": 2,\r\n                    \"urlStream\": \"https://www.netflix.com/watch/80133310\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/series/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"series",
+								"save"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Consultar series local(offline)",
+			"item": [
+				{
+					"name": "Consultar todas las series en la bd local",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/catalog/local/all-series",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"catalog",
+								"local",
+								"all-series"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar las series del genero Drama",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/catalog/all-series/Drama",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"catalog",
+								"all-series",
+								"Drama"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar las series del genero Sci-Fi",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/catalog/all-series/Sci-Fi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"catalog",
+								"all-series",
+								"Sci-Fi"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Consultar peliculas y series en Catalog",
+			"item": [
+				{
+					"name": "Consultar todas las peliculas y series desde catalog offline",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/catalog/local/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"catalog",
+								"local",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar series y peliculas de Drama online",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/catalog/all/Drama",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"catalog",
+								"all",
+								"Drama"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar series y peliculas de terror online",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/catalog/all/terror",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"catalog",
+								"all",
+								"terror"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar todas las peliculas y series desde catalog offline genero Drama",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/catalog/local/all/Drama",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"catalog",
+								"local",
+								"all",
+								"Drama"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar todas las peliculas y series desde catalog offline genero Sci-Fi",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/catalog/local/all/Sci-Fi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"catalog",
+								"local",
+								"all",
+								"Sci-Fi"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Consultar series o peliculas con circuitbraker",
+			"item": [
+				{
+					"name": "Consultar las peliculas del genero Accion en bd local o online",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/catalog/fall-movies/Accion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"catalog",
+								"fall-movies",
+								"Accion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar las series del genero Sci-fi en bd local o online",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/catalog/fall-series/Sci-Fi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"catalog",
+								"fall-series",
+								"Sci-Fi"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

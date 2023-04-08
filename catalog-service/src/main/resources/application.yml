@@ -4,22 +4,38 @@ spring:
   config:
     import: configserver:http://localhost:8888
 
-resilience4j.circuitbreaker:
-  instances:
-    movies:
-      failure-rate-threshold: 50
-      wait-duration-in-open-state: 5s
-      permitted-number-of-calls-in-half-open-state: 2
-      sliding-window-type: COUNT_BASED
-      sliding-window-size: 2
-resilience4j.retry:
-  retryAspectOrder: 2
-  instances:
-    movies:
-      maxAttempts: 2
-      waitDuration: 10
-      retryExceptions:
-        - feign.FeignException$InternalServerError
+resilience4j:
+  circuitbreaker:
+    instances:
+      movies:
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 5s
+        permitted-number-of-calls-in-half-open-state: 2
+        sliding-window-type: COUNT_BASED
+        sliding-window-size: 2
+      series:
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 5s
+        permitted-number-of-calls-in-half-open-state: 2
+        sliding-window-type: COUNT_BASED
+        sliding-window-size: 2
+  retry:
+    retry-aspect-order: 2
+    instances:
+      movies:
+        max-attempts: 2
+        wait-duration: 10s
+        retry-exceptions:
+          - feign.FeignException$InternalServerError
+      series:
+        max-attempts: 2
+        wait-duration: 10s
+        retry-exceptions:
+          - feign.FeignException$InternalServerError
+
+
+
+
 
 management:
   health:
@@ -28,4 +44,6 @@ management:
   endpoint:
     health:
       show-details: always
+
+
 

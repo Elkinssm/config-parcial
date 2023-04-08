@@ -23,7 +23,7 @@ public class SerieListener {
     @RabbitListener(queues = {"${queue.serie.name}"})
     public void receiveSerie(@Payload Serie serie) {
         try {
-            logger.info("Leyendo cola");
+            logger.info("Leyendo cola :" + serie);
             repositorySerie.save(serie);
         } catch (Exception e) {
             logger.error("Error al crear la serie: {}", e.getMessage());

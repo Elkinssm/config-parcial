@@ -26,8 +26,7 @@ public class MovieListener {
     @RabbitListener(queues = {"${queue.movie.name}"})
     public void receive(@Payload Movie movie) {
         try {
-            logger.info("Leyendo cola");
-//            Thread.sleep(1000);
+            logger.info("Leyendo cola :" + movie);
             movieRepository.save(movie);
         } catch (Exception e) {
             logger.error("Error al crear la pelicula: {}", e.getMessage());

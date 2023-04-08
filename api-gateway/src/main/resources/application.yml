@@ -1,12 +1,6 @@
-spring:
-  application:
-    name: api-gateway
-  config:
-    import: configserver:http://localhost:8888
-management:
-  health:
-    circuitbreakers:
-      enabled: 'true'
-  endpoint:
-    health:
-      show-details: always
+#spring:
+#  application:
+#    name: api-gateway
+#  config:
+#    import: configserver:http://localhost:8888
+

@@ -14,19 +14,19 @@ spring:
           predicates:
             - Path=/api/catalog/**
           filters:
-            -StripPrefix=2
+            - StripPrefix=2
         - id: movie-service-parcial
           uri: lb://movie-service-parcial
           predicates:
             - Path=/api/movies/**
           filters:
-            -StripPrefix=2
+            - StripPrefix=2
         - id: serie-service-parcial
           uri: lb://serie-service-parcial
           predicates:
             - Path=/api/series/**
           filters:
-            -StripPrefix=2
+            - StripPrefix=2
   zipkin:
     base-url: 'http://localhost:9411/'
     enabled: true

@@ -70,8 +70,11 @@ Además, al apagar el microservicio Catalog, podrás realizar pruebas específic
 En este caso elegi el microservicio de catalog, pues imagine un escenario donde los usuarios van a consultar las peliculas y series
 disponibles atraves del catalogo por lo que estas deben estar siempre disponibles para lo que cubir dos metodos uno que llame las peliculas por genero 
 y otro que haga lo mismo con series. Si en algun momento el servicio de series o peliculas este caido el sistema sea capaz de responderle
-con los datos almacenados en al base de datos de catalog.
-![Screenshot 2023-04-09 143034](https://user-images.githubusercontent.com/52393397/230792830-ea5b5208-c8da-43ca-b97b-68894cf21aad.jpeg)
+con los datos almacenados en al base de datos de catalog. A continuacion relaciono el fragmento de codigo donde se pueden ver los metodos.
+
+https://github.com/Elkinssm/parcial-backend-elkin-silva/blob/11de6303cb9558fa7c5c2a600203f6ebb25bbae8/catalog-service/src/main/java/com/dh/catalogservice/api/controller/CatalogController.java#L84-L157
+
+
 
 
 

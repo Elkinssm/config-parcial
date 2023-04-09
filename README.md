@@ -71,6 +71,7 @@ En este caso elegi el microservicio de catalog, pues imagine un escenario donde 
 disponibles atraves del catalogo por lo que estas deben estar siempre disponibles para lo que cubir dos metodos uno que llame las peliculas por genero 
 y otro que haga lo mismo con series. Si en algun momento el servicio de series o peliculas este caido el sistema sea capaz de responderle
 con los datos almacenados en al base de datos de catalog.
+![Screenshot 2023-04-09 143034](https://user-images.githubusercontent.com/52393397/230792830-ea5b5208-c8da-43ca-b97b-68894cf21aad.jpeg)
 
 
 

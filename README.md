@@ -66,7 +66,13 @@ Además, al apagar el microservicio Catalog, podrás realizar pruebas específic
 
 ---
 
-## Pruebas circuit breaker
+## Resiliencia - Resilence4J
+En este caso elegi el microservicio de catalog, pues imagine un escenario donde los usuarios van a consultar las peliculas y series
+disponibles atraves del catalogo por lo que estas deben estar siempre disponibles para lo que cubir dos metodos uno que llame las peliculas por genero 
+y otro que haga lo mismo con series. Si en algun momento el servicio de series o peliculas este caido el sistema sea capaz de responderle
+con los datos almacenados en al base de datos de catalog.
+
+
 
 ---
 

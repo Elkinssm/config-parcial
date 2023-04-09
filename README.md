@@ -17,7 +17,7 @@ Cada microservicio hace uso de una base de datos diferente
 > catalog-service usa una base de datos no relacional Mongodb embebida 
 > > movie-service usa una base de datos relacional de MySql
 > > >serie-service usa una base de datos no relacional Mongodb embebida
-
+---
 ## Uso
 
 1. Inicia el contenedor Zipkin ejecutando el siguiente comando de Docker:
@@ -51,12 +51,24 @@ Además, al apagar el microservicio Catalog, podrás realizar pruebas específic
 [Colección de Postman](./Parcial-microservicios-elkin-silva-part-2.postman_collection.json)
 
 [![Screenshot-2023-04-08-185132.jpg](https://i.postimg.cc/sXSjswdB/Screenshot-2023-04-08-185132.jpg)](https://postimg.cc/qhJVGc70)
+---
 
 ## Trazabilidad con Zipkin
+### Trazabilidad sin Catalogo encendido
+![Trazabilidad1](https://user-images.githubusercontent.com/52393397/230747820-f974cb7c-6149-467f-8978-abc1bea1b13b.gif)
+### Trazabilidad con Catalogo encendido
+![Trazabilidad2](https://user-images.githubusercontent.com/52393397/230748373-f7540867-1b67-4ab3-b3be-9be0d1eb0e62.gif)
+
+---
 
 ## Colas de mensajes con RabbitMQ
+![RabbitMq](https://user-images.githubusercontent.com/52393397/230748183-fd64529e-2b64-46d4-8b01-9d317947a0b7.gif)
+
+---
 
 ## Pruebas circuit breaker
+
+---
 
 ## Contacto
 

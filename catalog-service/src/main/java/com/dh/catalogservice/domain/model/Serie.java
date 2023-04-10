@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.ArrayList;
 import java.util.List;
 
-@Document(collection = "Catalog")
+@Document(collection = "Movies")
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter

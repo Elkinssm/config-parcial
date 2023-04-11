@@ -47,6 +47,11 @@ public class CatalogController {
         return new CatalogResponse(genre, movies, series);
     }
 
+
+    /**
+     * Obtiene todo el catálogo de películas y series almacenado en la base de datos local.
+     * @return un objeto CatalogResponse con los datos de todas las películas y series.
+     */
     @GetMapping("/local/all")
     public CatalogResponse getCatalogOffline() {
         List<Movie> movies = movieRepository.findAll();
@@ -54,6 +59,11 @@ public class CatalogController {
         return new CatalogResponse("local", movies, series);
     }
 
+    /**
+     * Obtiene todas las películas y series almacenadas en la base de datos local que pertenecen a un género específico.
+     * @param genre el género de las películas y series a obtener.
+     * @return un objeto CatalogResponse con los datos de todas las películas y series del género especificado.
+     */
     @GetMapping("/local/all/{genre}")
     public CatalogResponse getCatalogByGenreOffline(@PathVariable String genre) {
         List<Movie> movies = movieRepository.findAllByGenre(genre);

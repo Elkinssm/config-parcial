@@ -3,7 +3,6 @@
 # Elkin Silva Manrique
 
 ## Resumen
-
 En este repositorio se puede encontrar el código a la consigna del parcial final de microservicios con spring boot, donde se
 encuentra el
 config server, gateway, eureka server, y los microservicios de movie y catalog los cuales usan feign client para
@@ -78,10 +77,186 @@ En el gif simula cuando el microservicio de movie o serie este caido igual el si
 
 https://github.com/Elkinssm/parcial-backend-elkin-silva/blob/11de6303cb9558fa7c5c2a600203f6ebb25bbae8/catalog-service/src/main/java/com/dh/catalogservice/api/controller/CatalogController.java#L84-L157
 
+## Metodos Offline 
+Para esta parte de la consigna tengo en el controller de catalog metodos que se encargan de consultar la base de datos local de mongo que tiene catalogo
+de manera offline valiendo me de MongoRepository, es capaz de mostrar todas las peliculas y series, y el otro muestra todas las peliculas y serie por genero
+
+https://github.com/Elkinssm/parcial-backend-elkin-silva/blob/b4af3b4a571d1056684afbc5a9c603669f3ab119/catalog-service/src/main/java/com/dh/catalogservice/api/controller/CatalogController.java#L51-L72
+
+
+Método: getCatalogOffline
+
+Descripción: Este método devuelve todo el catálogo de películas y series que se encuentran en la base de datos local.
+
+URL: /local/all
+
+Método HTTP: GET
+
+Respuesta exitosa:
+
+```
+{
+    "genre": "local",
+    "movies": [
+        {
+            "id": "6434c7878a4f684ec08ab721",
+            "name": "Black Adam",
+            "genre": "Accion",
+            "urlStream": "testBd"
+        },
+        {
+            "id": "6434c7898a4f684ec08ab722",
+            "name": "Blade Runner 2049",
+            "genre": "Sci-Fi",
+            "urlStream": "testBd"
+        }
+    ],
+    "series": [
+        {
+            "id": "6434c74f8a4f684ec08ab71f",
+            "name": "Breaking Bad",
+            "genre": "Drama",
+            "seasons": [
+                {
+                    "seasonNumber": 1,
+                    "chapters": [
+                        {
+                            "name": "Pilot",
+                            "number": 1,
+                            "urlStream": "https://www.youtube.com/watch?v=HhesaQXLuRY"
+                        },
+                        {
+                            "name": "Cat's in the Bag...",
+                            "number": 2,
+                            "urlStream": "https://www.youtube.com/watch?v=EzjHVNOrtkg"
+                        }
+                    ]
+                },
+                {
+                    "seasonNumber": 2,
+                    "chapters": [
+                        {
+                            "name": "Seven Thirty-Seven",
+                            "number": 1,
+                            "urlStream": "https://www.youtube.com/watch?v=ZG_K5WGyN9o"
+                        },
+                        {
+                            "name": "Grilled",
+                            "number": 2,
+                            "urlStream": "https://www.youtube.com/watch?v=vCgB0hA1NxA"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "6434c74f8a4f684ec08ab720",
+            "name": "Stranger Things",
+            "genre": "Sci-Fi",
+            "seasons": [
+                {
+                    "seasonNumber": 1,
+                    "chapters": [
+                        {
+                            "name": "Chapter One: The Vanishing of Will Byers",
+                            "number": 1,
+                            "urlStream": "https://www.netflix.com/watch/80057281"
+                        },
+                        {
+                            "name": "Chapter Two: The Weirdo on Maple Street",
+                            "number": 2,
+                            "urlStream": "https://www.netflix.com/watch/80057282"
+                        }
+                    ]
+                },
+                {
+                    "seasonNumber": 2,
+                    "chapters": [
+                        {
+                            "name": "Chapter One: MADMAX",
+                            "number": 1,
+                            "urlStream": "https://www.netflix.com/watch/80133309"
+                        },
+                        {
+                            "name": "Chapter Two: Trick or Treat, Freak",
+                            "number": 2,
+                            "urlStream": "https://www.netflix.com/watch/80133310"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+```
+
+Método: getCatalogByGenreOffline
+
+Descripción: Este método devuelve todas las películas y series que se encuentran en la base de datos local, filtradas por género.
+
+URL: /local/all/{genre}
+
+Método HTTP: GET
+
+Parámetros:
+| Parámetro | Tipo | Descripción |
+| --------- | ---- | ----------- |
+| genre     | string | El género por el que filtrar |
 
 
 
-
+```
+{
+    "genre": "Sci-Fi",
+    "movies": [
+        {
+            "id": "6434e1ac7c8ff65b7dbfdfde",
+            "name": "Blade Runner 2049",
+            "genre": "Sci-Fi",
+            "urlStream": "testBd"
+        }
+    ],
+    "series": [
+        {
+            "id": "6434e1a77c8ff65b7dbfdfdc",
+            "name": "Stranger Things",
+            "genre": "Sci-Fi",
+            "seasons": [
+                {
+                    "seasonNumber": 1,
+                    "chapters": [
+                        {
+                            "name": "Chapter One: The Vanishing of Will Byers",
+                            "number": 1,
+                            "urlStream": "https://www.netflix.com/watch/80057281"
+                        },
+                        {
+                            "name": "Chapter Two: The Weirdo on Maple Street",
+                            "number": 2,
+                            "urlStream": "https://www.netflix.com/watch/80057282"
+                        }
+                    ]
+                },
+                {
+                    "seasonNumber": 2,
+                    "chapters": [
+                        {
+                            "name": "Chapter One: MADMAX",
+                            "number": 1,
+                            "urlStream": "https://www.netflix.com/watch/80133309"
+                        },
+                        {
+                            "name": "Chapter Two: Trick or Treat, Freak",
+                            "number": 2,
+                            "urlStream": "https://www.netflix.com/watch/80133310"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+```
 ---
 
 ## Contacto

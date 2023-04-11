@@ -3,6 +3,7 @@
 # Elkin Silva Manrique
 
 ## Resumen
+---
 En este repositorio se puede encontrar el código a la consigna del parcial final de microservicios con spring boot, donde se
 encuentra el
 config server, gateway, eureka server, y los microservicios de movie y catalog los cuales usan feign client para
@@ -82,7 +83,7 @@ Para esta parte de la consigna tengo en el controller de catalog metodos que se 
 de manera offline valiendo me de MongoRepository, es capaz de mostrar todas las peliculas y series, y el otro muestra todas las peliculas y serie por genero
 
 https://github.com/Elkinssm/parcial-backend-elkin-silva/blob/b4af3b4a571d1056684afbc5a9c603669f3ab119/catalog-service/src/main/java/com/dh/catalogservice/api/controller/CatalogController.java#L51-L72
-
+---
 
 Método: getCatalogOffline
 
@@ -189,7 +190,7 @@ Respuesta exitosa:
     ]
 }
 ```
-
+---
 Método: getCatalogByGenreOffline
 
 Descripción: Este método devuelve todas las películas y series que se encuentran en la base de datos local, filtradas por género.
